@@ -46,17 +46,6 @@ const FALLBACK_PROJECTS: ProjectType[] = [
   },
   {
     _id: '2',
-    title: 'Abee Bucket List Extension',
-    description: 'A Chrome productivity extension styled like Red Bull F1 garage to organize shortcuts, bookmarks, AI routes, and birthdays in a glassmorphic board.',
-    stack: ['Chrome API', 'React', 'TypeScript', 'Tailwind CSS', 'Webpack'],
-    challenges: 'Managing cross-origin messaging and persistent local state variables across background service workers.',
-    outcomes: 'Deployed as a zip bundle, organizing bookmarks into responsive grids with 3D tilt effects.',
-    githubUrl: 'https://github.com/abhay1250i/abee-bucket-list',
-    liveUrl: 'https://abee-bucket-list.vercel.app',
-    featured: true,
-  },
-  {
-    _id: '3',
     title: 'Notes App',
     description: 'An offline-first markdown-enabled personal note-taking utility with tags and auto-save capabilities.',
     stack: ['React', 'TypeScript', 'Tailwind CSS', 'IndexedDB'],
@@ -67,7 +56,7 @@ const FALLBACK_PROJECTS: ProjectType[] = [
     featured: true,
   },
   {
-    _id: '4',
+    _id: '3',
     title: 'Food Logger',
     description: 'A responsive visual web platform to log daily meals, track nutritional values, and monitor dietary habits.',
     stack: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Node.js'],
@@ -75,6 +64,17 @@ const FALLBACK_PROJECTS: ProjectType[] = [
     outcomes: 'Built a lightweight tracker with instant search and dynamic progress updates.',
     githubUrl: 'https://github.com/abhay1250i/food-looger',
     liveUrl: 'https://food-looger.vercel.app',
+    featured: true,
+  },
+  {
+    _id: '4',
+    title: 'Abee Bucket List Extension',
+    description: 'A Chrome productivity extension styled like Red Bull F1 garage to organize shortcuts, bookmarks, AI routes, and birthdays in a glassmorphic board.',
+    stack: ['Chrome API', 'React', 'TypeScript', 'Tailwind CSS', 'Webpack'],
+    challenges: 'Managing cross-origin messaging and persistent local state variables across background service workers.',
+    outcomes: 'Deployed as a zip bundle, organizing bookmarks into responsive grids with 3D tilt effects.',
+    githubUrl: 'https://github.com/abhay1250i/abee-bucket-list',
+    liveUrl: 'https://abee-bucket-list.vercel.app',
     featured: true,
   },
   {
@@ -161,7 +161,39 @@ export default function Home() {
             experience: FALLBACK_SKILLS[idx]?.experience || '1 Year'
           })) : FALLBACK_SKILLS;
 
-          setProjects(projs.length > 0 ? projs : FALLBACK_PROJECTS);
+          // Reorder and merge API projects with fallbacks to ensure highlighted projects are always at the top
+          const highlightedTitles = [
+            'ani.dev Portfolio', 
+            'Notes App', 
+            'Food Logger',
+            'Abee Bucket List Extension'
+          ];
+          
+          let mergedProjs = projs.length > 0 ? [...projs] : [...FALLBACK_PROJECTS];
+          
+          // Ensure all highlighted projects are in the list (failsafe for unseeded backend)
+          highlightedTitles.forEach((title) => {
+            const exists = mergedProjs.some((p: any) => p.title.toLowerCase() === title.toLowerCase());
+            if (!exists) {
+              const fallbackProj = FALLBACK_PROJECTS.find((p) => p.title.toLowerCase() === title.toLowerCase());
+              if (fallbackProj) {
+                mergedProjs.push(fallbackProj);
+              }
+            }
+          });
+
+          // Sort so highlighted ones appear first and in order
+          const sortedProjs = mergedProjs.sort((a: any, b: any) => {
+            const aIndex = highlightedTitles.findIndex((t) => t.toLowerCase() === a.title.toLowerCase());
+            const bIndex = highlightedTitles.findIndex((t) => t.toLowerCase() === b.title.toLowerCase());
+            
+            if (aIndex !== -1 && bIndex !== -1) return aIndex - bIndex;
+            if (aIndex !== -1) return -1;
+            if (bIndex !== -1) return 1;
+            return 0;
+          });
+
+          setProjects(sortedProjs);
           setSkills(mappedSks);
         } else {
           setProjects(FALLBACK_PROJECTS);

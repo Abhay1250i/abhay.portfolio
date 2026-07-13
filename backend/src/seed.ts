@@ -45,16 +45,6 @@ const seedData = async () => {
         featured: true,
       },
       {
-        title: 'Abee Bucket List Extension',
-        description: 'A Chrome productivity extension styled like Red Bull F1 garage to organize shortcuts, bookmarks, AI routes, and birthdays in a glassmorphic board.',
-        stack: ['Chrome API', 'React', 'TypeScript', 'Tailwind CSS', 'Webpack'],
-        challenges: 'Managing cross-origin messaging and persistent local state variables across background service workers.',
-        outcomes: 'Deployed as a zip bundle, organizing bookmarks into responsive grids with 3D tilt effects.',
-        githubUrl: 'https://github.com/abhay1250i/abee-bucket-list',
-        liveUrl: 'https://abee-bucket-list.vercel.app',
-        featured: true,
-      },
-      {
         title: 'Notes App',
         description: 'A markdown-enabled personal note-taking dashboard with tags and auto-save capabilities.',
         stack: ['React', 'TypeScript', 'Tailwind CSS', 'IndexedDB'],
@@ -72,6 +62,16 @@ const seedData = async () => {
         outcomes: 'Built a lightweight tracker with instant search and dynamic progress updates.',
         githubUrl: 'https://github.com/abhay1250i/food-looger',
         liveUrl: 'https://food-looger.vercel.app',
+        featured: true,
+      },
+      {
+        title: 'Abee Bucket List Extension',
+        description: 'A Chrome productivity extension styled like Red Bull F1 garage to organize shortcuts, bookmarks, AI routes, and birthdays in a glassmorphic board.',
+        stack: ['Chrome API', 'React', 'TypeScript', 'Tailwind CSS', 'Webpack'],
+        challenges: 'Managing cross-origin messaging and persistent local state variables across background service workers.',
+        outcomes: 'Deployed as a zip bundle, organizing bookmarks into responsive grids with 3D tilt effects.',
+        githubUrl: 'https://github.com/abhay1250i/abee-bucket-list',
+        liveUrl: 'https://abee-bucket-list.vercel.app',
         featured: true,
       },
       {
