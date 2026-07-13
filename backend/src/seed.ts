@@ -51,7 +51,17 @@ const seedData = async () => {
         challenges: 'Creating fluid, high-performance transitions and managing persistent layouts for interactive administrative and terminal sections.',
         outcomes: 'Achieved 98+ Lighthouse scores across SEO, Performance, and Accessibility with responsive web design paradigms.',
         githubUrl: 'https://github.com/abhay1250i/portfolio',
-        liveUrl: 'https://ani.dev',
+        liveUrl: 'https://abhay-portfolio-tk2o.vercel.app',
+        featured: true,
+      },
+      {
+        title: 'Abee Bucket List Extension',
+        description: 'A Chrome productivity extension styled like Red Bull F1 garage to organize shortcuts, bookmarks, AI routes, and birthdays in a glassmorphic board.',
+        stack: ['Chrome API', 'React', 'TypeScript', 'Tailwind CSS', 'Webpack'],
+        challenges: 'Managing cross-origin messaging and persistent local state variables across background service workers.',
+        outcomes: 'Deployed as a zip bundle, organizing bookmarks into responsive grids with 3D tilt effects.',
+        githubUrl: 'https://github.com/abhay1250i/abee-bucket-list',
+        liveUrl: 'https://abee-bucket-list.vercel.app',
         featured: true,
       },
       {
@@ -71,8 +81,18 @@ const seedData = async () => {
         challenges: 'Managing document syncing and schema version changes inside client-side IndexedDB.',
         outcomes: 'Created an offline-first notes system that lets users write code blocks and save records with markdown support.',
         githubUrl: 'https://github.com/abhay1250i/notes',
-        liveUrl: 'https://notes.ani.dev',
-        featured: false,
+        liveUrl: 'https://ink-well-notes-web-usjo.vercel.app',
+        featured: true,
+      },
+      {
+        title: 'Food Logger',
+        description: 'A responsive visual web platform to log daily meals, track nutritional values, and monitor dietary habits.',
+        stack: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Node.js'],
+        challenges: 'Designing a highly responsive interface for mobile logging and parsing food database API inputs.',
+        outcomes: 'Built a lightweight tracker with instant search and dynamic progress updates.',
+        githubUrl: 'https://github.com/abhay1250i/food-looger',
+        liveUrl: 'https://food-looger.vercel.app',
+        featured: true,
       }
     ];
     await Project.insertMany(projects);
