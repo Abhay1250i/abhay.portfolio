@@ -82,7 +82,7 @@ export const CustomCursor = () => {
     <>
       {/* Spotlight Radial Overlay */}
       <div
-        className="fixed inset-0 pointer-events-none z-30 transition-opacity duration-300"
+        className="custom-cursor fixed inset-0 pointer-events-none z-30 transition-opacity duration-300 hidden sm:block"
         style={{
           background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(59, 130, 246, 0.04), transparent 80%)`,
         }}
@@ -90,7 +90,7 @@ export const CustomCursor = () => {
 
       {/* Inner Dot */}
       <div
-        className="fixed w-2 h-2 bg-blue-500 rounded-full pointer-events-none z-50 -translate-x-1/2 -translate-y-1/2 transition-transform duration-100 ease-out"
+        className="custom-cursor fixed w-2 h-2 bg-blue-500 rounded-full pointer-events-none z-50 -translate-x-1/2 -translate-y-1/2 transition-transform duration-100 ease-out hidden sm:block"
         style={{
           left: `${position.x}px`,
           top: `${position.y}px`,
@@ -100,7 +100,7 @@ export const CustomCursor = () => {
 
       {/* Outer Follow Circle */}
       <div
-        className="fixed rounded-full pointer-events-none z-50 -translate-x-1/2 -translate-y-1/2 border border-blue-500/40 mix-blend-difference transition-all duration-300 ease-out hidden sm:block"
+        className="custom-cursor fixed rounded-full pointer-events-none z-50 -translate-x-1/2 -translate-y-1/2 border border-blue-500/40 mix-blend-difference transition-all duration-300 ease-out hidden sm:block"
         style={{
           left: `${trailPosition.x}px`,
           top: `${trailPosition.y}px`,

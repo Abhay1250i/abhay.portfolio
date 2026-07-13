@@ -53,7 +53,7 @@ export const AIAssistant = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50">
       {/* Floating Toggle Button */}
       {!isOpen && (
         <button
@@ -67,12 +67,12 @@ export const AIAssistant = () => {
 
       {/* Chat Dialog Drawer */}
       {isOpen && (
-        <div className="w-80 sm:w-96 h-[450px] bg-background/30 backdrop-blur-xl rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-fade-in">
+        <div className="w-[calc(100vw-2rem)] sm:w-96 h-[400px] sm:h-[450px] bg-background/30 backdrop-blur-xl rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-fade-in">
           {/* Header */}
           <div className="flex items-center justify-between px-4 py-3 bg-card/20 backdrop-blur-md">
             <div className="flex items-center gap-2">
               <Bot className="w-5 h-5 text-blue-500" />
-              <span className="font-display font-medium text-foreground text-sm">Abhay's AI Agent</span>
+              <span className="font-display font-medium text-foreground text-sm">Abhay&apos;s AI Agent</span>
             </div>
             <button onClick={() => setIsOpen(false)} className="text-muted hover:text-foreground transition-colors cursor-pointer">
               <X className="w-5 h-5" />

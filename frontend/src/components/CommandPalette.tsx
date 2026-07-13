@@ -48,7 +48,10 @@ export const CommandPalette = () => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center pt-[15vh] px-4 bg-black/50 backdrop-blur-xs">
+    <div 
+      className="fixed inset-0 z-50 flex items-start justify-center pt-[15vh] px-4 bg-black/50 backdrop-blur-xs"
+      onClick={() => setIsOpen(false)}
+    >
       <div 
         className="w-full max-w-lg overflow-hidden glass rounded-2xl shadow-2xl border-border"
         onClick={(e) => e.stopPropagation()}

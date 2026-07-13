@@ -190,6 +190,10 @@ Tagline:    Frontend Developer & AI Enthusiast`;
               value={input}
               onChange={(e) => setInput(e.target.value)}
               autoFocus
+              autoComplete="off"
+              autoCorrect="off"
+              autoCapitalize="none"
+              spellCheck="false"
             />
           </form>
         </div>

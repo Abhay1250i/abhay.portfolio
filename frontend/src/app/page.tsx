@@ -268,7 +268,7 @@ export default function Home() {
                 </div>
                 <div>
                   <span className="block text-muted font-semibold">EMAIL</span>
-                  <span className="text-foreground font-mono">abhaykumarbid.cse25@ritroorkee.com</span>
+                  <span className="text-foreground font-mono break-all">abhaykumarbid.cse25@ritroorkee.com</span>
                 </div>
               </div>
             </div>

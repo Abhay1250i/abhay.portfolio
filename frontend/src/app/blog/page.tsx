@@ -132,8 +132,8 @@ export default function BlogPage() {
 
       {/* IMMERSIVE READING OVERLAY MODAL */}
       {selectedBlog && (
-        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
-          <div className="glass w-full max-w-3xl rounded-2xl border-border max-h-[85vh] overflow-y-auto shadow-2xl flex flex-col">
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-md flex items-center justify-center p-0 sm:p-4 overflow-y-auto">
+          <div className="glass w-full max-w-3xl rounded-none sm:rounded-2xl border-x-0 border-y-0 sm:border border-border h-full sm:h-auto max-h-screen sm:max-h-[85vh] overflow-y-auto shadow-2xl flex flex-col">
             
             {/* Header / Close button */}
             <div className="sticky top-0 bg-background/95 backdrop-blur-md px-6 py-4 border-b border-border flex items-center justify-between z-10">

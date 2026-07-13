@@ -127,3 +127,14 @@ body {
 .text-glow {
   text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
 }
+
+/* Media query to hide custom cursor and restore default cursor behavior on touch devices */
+@media (hover: none) {
+  .custom-cursor {
+    display: none !important;
+  }
+  body, button, a, [role="button"] {
+    cursor: auto !important;
+  }
+}
+

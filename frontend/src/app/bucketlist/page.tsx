@@ -198,7 +198,7 @@ export default function BucketListPage() {
                         </a>
                         <button
                           onClick={() => handleDeleteLink(item.name)}
-                          className="text-muted hover:text-red-500 transition-colors opacity-0 group-hover/item:opacity-100 p-0.5"
+                          className="text-muted hover:text-red-500 transition-colors opacity-100 lg:opacity-0 lg:group-hover/item:opacity-100 p-0.5"
                           aria-label={`Delete ${item.name}`}
                         >
                           <Trash2 className="w-3.5 h-3.5" />
