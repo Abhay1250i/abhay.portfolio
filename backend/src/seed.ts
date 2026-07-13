@@ -35,16 +35,6 @@ const seedData = async () => {
     // Seed Projects
     const projects = [
       {
-        title: 'Truth Lense',
-        description: 'A cutting-edge media verification platform that aggregates visual forensics algorithms to authenticate digital image and video content.',
-        stack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'FastAPI', 'Python', 'Docker'],
-        challenges: 'Integrating resource-heavy Python forensic models and maintaining low latency for web clients during visual processing uploads.',
-        outcomes: 'Built a modular microservices API queue, reducing front-end waiting time by 45% using SSE (Server-Sent Events) notifications.',
-        githubUrl: 'https://github.com/abhay1250i/truth-lense',
-        liveUrl: 'https://truthlense.ani.dev',
-        featured: true,
-      },
-      {
         title: 'Portfolio Website',
         description: 'The premium, responsive personal brand portfolio platform styled like Apple & Linear, running with integrated developer terminal mode.',
         stack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'GSAP', 'Node.js', 'MongoDB'],
@@ -65,16 +55,6 @@ const seedData = async () => {
         featured: true,
       },
       {
-        title: 'Budget Tracker',
-        description: 'A financial dashboard helping users log expenses, visual charts, and set limits on specific item budgets.',
-        stack: ['React', 'JavaScript', 'Chart.js', 'Tailwind CSS', 'LocalStore API'],
-        challenges: 'Building dynamic, responsive charts that render smoothly across viewport sizes and keeping layout highly interactive.',
-        outcomes: 'Delivered an intuitive visual interface running purely client-side without complex setup or tracking.',
-        githubUrl: 'https://github.com/abhay1250i/budget-tracker',
-        liveUrl: 'https://budget.ani.dev',
-        featured: false,
-      },
-      {
         title: 'Notes App',
         description: 'A markdown-enabled personal note-taking dashboard with tags and auto-save capabilities.',
         stack: ['React', 'TypeScript', 'Tailwind CSS', 'IndexedDB'],
@@ -93,6 +73,26 @@ const seedData = async () => {
         githubUrl: 'https://github.com/abhay1250i/food-looger',
         liveUrl: 'https://food-looger.vercel.app',
         featured: true,
+      },
+      {
+        title: 'Truth Lense',
+        description: 'A cutting-edge media verification platform that aggregates visual forensics algorithms to authenticate digital image and video content.',
+        stack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'FastAPI', 'Python', 'Docker'],
+        challenges: 'Integrating resource-heavy Python forensic models and maintaining low latency for web clients during visual processing uploads.',
+        outcomes: 'Built a modular microservices API queue, reducing front-end waiting time by 45% using SSE (Server-Sent Events) notifications.',
+        githubUrl: 'https://github.com/abhay1250i/truth-lense',
+        liveUrl: 'https://truthlense.ani.dev',
+        featured: true,
+      },
+      {
+        title: 'Budget Tracker',
+        description: 'A financial dashboard helping users log expenses, visual charts, and set limits on specific item budgets.',
+        stack: ['React', 'JavaScript', 'Chart.js', 'Tailwind CSS', 'LocalStore API'],
+        challenges: 'Building dynamic, responsive charts that render smoothly across viewport sizes and keeping layout highly interactive.',
+        outcomes: 'Delivered an intuitive visual interface running purely client-side without complex setup or tracking.',
+        githubUrl: 'https://github.com/abhay1250i/budget-tracker',
+        liveUrl: 'https://budget.ani.dev',
+        featured: false,
       }
     ];
     await Project.insertMany(projects);

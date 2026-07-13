@@ -35,17 +35,6 @@ interface SkillType {
 const FALLBACK_PROJECTS: ProjectType[] = [
   {
     _id: '1',
-    title: 'Truth Lense',
-    description: 'A media authenticity validation platform that aggregates visual forensics algorithms to authenticate digital content.',
-    stack: ['Next.js', 'React', 'TypeScript', 'FastAPI', 'Python', 'Docker'],
-    challenges: 'Integrating resource-heavy Python forensic models and maintaining low latency for web clients during visual processing uploads.',
-    outcomes: 'Built a modular microservices API queue, reducing front-end waiting time by 45% using Server-Sent Events (SSE).',
-    githubUrl: 'https://github.com/abhay1250i/truth-lense',
-    liveUrl: 'https://truthlense.ani.dev',
-    featured: true,
-  },
-  {
-    _id: '2',
     title: 'ani.dev Portfolio',
     description: 'The premium, responsive personal brand portfolio platform styled like Apple & Linear, running with integrated developer terminal mode.',
     stack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'GSAP', 'Express', 'MongoDB'],
@@ -56,7 +45,7 @@ const FALLBACK_PROJECTS: ProjectType[] = [
     featured: true,
   },
   {
-    _id: '3',
+    _id: '2',
     title: 'Abee Bucket List Extension',
     description: 'A Chrome productivity extension styled like Red Bull F1 garage to organize shortcuts, bookmarks, AI routes, and birthdays in a glassmorphic board.',
     stack: ['Chrome API', 'React', 'TypeScript', 'Tailwind CSS', 'Webpack'],
@@ -67,17 +56,7 @@ const FALLBACK_PROJECTS: ProjectType[] = [
     featured: true,
   },
   {
-    _id: '4',
-    title: 'Government Subsidies Portal',
-    description: 'A portal simplifying discovery and application for state-provided subsidies, targeted at accessibility.',
-    stack: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS'],
-    challenges: 'Designing for extremely diverse screen sizes and poor internet connections in remote areas.',
-    outcomes: 'Deployed with high responsiveness, supporting offline accessibility for cached items.',
-    githubUrl: 'https://github.com/abhay1250i/subsidy-portal',
-    featured: true,
-  },
-  {
-    _id: '5',
+    _id: '3',
     title: 'Notes App',
     description: 'An offline-first markdown-enabled personal note-taking utility with tags and auto-save capabilities.',
     stack: ['React', 'TypeScript', 'Tailwind CSS', 'IndexedDB'],
@@ -88,7 +67,7 @@ const FALLBACK_PROJECTS: ProjectType[] = [
     featured: true,
   },
   {
-    _id: '6',
+    _id: '4',
     title: 'Food Logger',
     description: 'A responsive visual web platform to log daily meals, track nutritional values, and monitor dietary habits.',
     stack: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Node.js'],
@@ -96,6 +75,27 @@ const FALLBACK_PROJECTS: ProjectType[] = [
     outcomes: 'Built a lightweight tracker with instant search and dynamic progress updates.',
     githubUrl: 'https://github.com/abhay1250i/food-looger',
     liveUrl: 'https://food-looger.vercel.app',
+    featured: true,
+  },
+  {
+    _id: '5',
+    title: 'Truth Lense',
+    description: 'A media authenticity validation platform that aggregates visual forensics algorithms to authenticate digital content.',
+    stack: ['Next.js', 'React', 'TypeScript', 'FastAPI', 'Python', 'Docker'],
+    challenges: 'Integrating resource-heavy Python forensic models and maintaining low latency for web clients during visual processing uploads.',
+    outcomes: 'Built a modular microservices API queue, reducing front-end waiting time by 45% using Server-Sent Events (SSE).',
+    githubUrl: 'https://github.com/abhay1250i/truth-lense',
+    liveUrl: 'https://truthlense.ani.dev',
+    featured: true,
+  },
+  {
+    _id: '6',
+    title: 'Government Subsidies Portal',
+    description: 'A portal simplifying discovery and application for state-provided subsidies, targeted at accessibility.',
+    stack: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS'],
+    challenges: 'Designing for extremely diverse screen sizes and poor internet connections in remote areas.',
+    outcomes: 'Deployed with high responsiveness, supporting offline accessibility for cached items.',
+    githubUrl: 'https://github.com/abhay1250i/subsidy-portal',
     featured: true,
   },
   {
@@ -389,22 +389,24 @@ export default function Home() {
 
             return (
               <Tilt3D key={proj._id} className="h-full">
-                <div className={`glass p-6 rounded-2xl hover:border-blue-500/50 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between h-full shadow-sm ${
+                <div className={`glass p-6 rounded-2xl hover:border-blue-500/80 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between h-full ${
                   isHighlighted 
-                    ? 'border-blue-500/30 shadow-md shadow-blue-500/5 bg-gradient-to-b from-blue-500/5 to-transparent' 
-                    : 'border-border'
+                    ? 'border-blue-500/50 shadow-[0_0_25px_rgba(59,130,246,0.15)] bg-gradient-to-br from-blue-500/10 via-background/40 to-indigo-500/5 hover:shadow-[0_0_30px_rgba(59,130,246,0.25)]' 
+                    : 'border-border shadow-sm'
                 }`}>
                   <div className="space-y-4">
-                    <div className="flex justify-between items-start">
-                      <h3 className="text-xl font-bold text-foreground flex items-center flex-wrap gap-2">
+                    <div className="flex justify-between items-start gap-4">
+                      <h3 className={`font-bold text-foreground flex items-center flex-wrap gap-2 ${
+                        isHighlighted ? 'text-xl sm:text-2xl font-black text-white' : 'text-xl'
+                      }`}>
                         {proj.title}
                         {isHighlighted && (
-                          <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[9px] font-semibold bg-blue-500/20 text-blue-400 border border-blue-500/30">
+                          <span className="inline-flex items-center px-2 py-0.5 rounded text-[8px] font-black bg-blue-500 text-white shadow-[0_0_8px_rgba(59,130,246,0.4)] tracking-wider uppercase animate-pulse">
                             Vercel Live
                           </span>
                         )}
                       </h3>
-                      <div className="flex gap-2">
+                      <div className="flex gap-2 shrink-0">
                         {proj.githubUrl && (
                           <a href={proj.githubUrl} target="_blank" rel="noopener noreferrer" className="text-muted hover:text-foreground transition-colors cursor-pointer" aria-label="GitHub">
                             <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.50-.33.85 0 1.71.11 2.50.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
